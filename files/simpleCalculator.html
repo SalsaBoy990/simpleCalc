@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Egyszerű számológép - Simple Calculator</title>
+    <title>simpleCalc - A simple Calculator</title>
     <meta lang="hu-HU">
-    <meta name="description" content="A very simple web page for testing">
+    <meta name="description" content="simpleCalc - A Simple Calculator">
     <meta name="author" content="Gulácsi András">
 
     <link rel="shortcut icon" type="image/png" href="https://assets-cdn.github.com/images/icons/emoji/unicode/1f522.png">
@@ -15,10 +15,9 @@
     
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="style.js"></script>
-    <script type="text/javascript" src="simpleCalc.js"></script>
+    <script type="text/javascript" src="minified/simpleCalc-min.js"></script>
   </head>
   <body>
-      
     <table class="calculator">
       <tr>
         <td colspan="5"><h2>Your calculator</h2></td>
@@ -27,8 +26,6 @@
       <tr>
         <td colspan="5"><div id="display" class="display">0</div></td>
       </tr>
-
-      
 
       <tr>
         <td colspan="3"><div id="message"></div></td>
@@ -62,7 +59,7 @@
 
       <tr>
         <td><button id="b0" class="smallbox">0</button></td>
-        <td><button id="comma" class="smallbox">,</button></td>
+        <td><button id="point" class="smallbox">.</button></td>
         <td><button id="sign" class="smallbox">-x</button></td>
         <td colspan="2"><button class="smallbox-2 margin-right-0" id="calculate-button" >=</button></td>
         <td></td>
@@ -72,7 +69,7 @@
     <br />
 
     <div class="note">
-        <p>MIT license.<br/>Copyright &copy; 2017 Andras Gulacsi<br/>
+        <p>Copyright &copy; 2017 Andras Gulacsi<br/>MIT license.<br/>
           If you bump into an error, send me an <a href="mailto:guland@protonmail.com">email</a> if you want!<br />
           Or open a new issue on <a href="https://github.com/SalsaBoy990/simpleCalc/issues">GitHub</a>.
         </p>

@@ -3,7 +3,7 @@ $(document).ready( function() {
     var error;
     var temp;
     $('#calculate-button').click(function() {
-        simpleCalc(startingBracket, endingBracket, "display", "message");
+        simpleCalc("display", "message");
         error = $("#message");
         error.delay(2000).fadeOut("fast", function() {
             error.html("").css('display', 'block')
@@ -12,7 +12,7 @@ $(document).ready( function() {
     
     $("#b0").click(function() {
         temp = $("#display").html();
-        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ",") {
+        if(firstPoint === true && count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ".") {
             $("#display").html(temp);
             count = 1;
         } else {
@@ -23,7 +23,7 @@ $(document).ready( function() {
 
     $("#b1").click(function() {
         temp = $("#display").html();
-        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ",") {
+        if(firstPoint === true && count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ".") {
             temp = "1";
             $("#display").html(temp);
             count = 1;
@@ -35,7 +35,7 @@ $(document).ready( function() {
 
     $("#b2").click(function() {
         temp = $("#display").html();
-        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ",") {
+        if(firstPoint === true && count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ".") {
             temp = "2";
             $("#display").html(temp);
             count = 1;
@@ -47,7 +47,7 @@ $(document).ready( function() {
 
     $("#b3").click(function() {
         temp = $("#display").html();
-        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ",") {
+        if(firstPoint === true && count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ".") {
             temp = "3";
             $("#display").html(temp);
             count = 1;
@@ -59,7 +59,7 @@ $(document).ready( function() {
     
     $("#b4").click(function() {
         temp = $("#display").html();
-        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ",") {
+        if(firstPoint === true && count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ".") {
             temp = "4";
             $("#display").html(temp);
             count = 1;
@@ -71,7 +71,7 @@ $(document).ready( function() {
 
     $("#b5").click(function() {
         temp = $("#display").html();
-        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ",") {
+        if(firstPoint === true && count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ".") {
             temp = "5";
             $("#display").html(temp);
             count = 1;
@@ -83,7 +83,7 @@ $(document).ready( function() {
     
     $("#b6").click(function() {
         temp = $("#display").html();
-        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ",") {
+        if(firstPoint === true && count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ".") {
             temp = "6";
             $("#display").html(temp);
             count = 1;
@@ -95,7 +95,7 @@ $(document).ready( function() {
 
     $("#b7").click(function() {
         temp = $("#display").html();
-        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ",") {
+        if(firstPoint === true && count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ".") {
             temp = "7";
             $("#display").html(temp);
             count = 1;
@@ -107,7 +107,7 @@ $(document).ready( function() {
     
     $("#b8").click(function() {
         temp = $("#display").html();
-        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ",") {
+        if(firstPoint === true && count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ".") {
             temp = "8";
             $("#display").html(temp);
             count = 1;
@@ -119,7 +119,7 @@ $(document).ready( function() {
 
     $("#b9").click(function() {
         temp = $("#display").html();
-        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ",") {
+        if(firstPoint === true && count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ".") {
             temp = "9";
             $("#display").html(temp);
             count = 1;
@@ -132,7 +132,7 @@ $(document).ready( function() {
     $("#backspace").click(function() {
         temp = $("#display").html();
         if(temp.length === 1) {
-            temp = "0";
+            temp = "";
             $("#display").html(temp);
             count = 0;
         } else {
@@ -149,7 +149,7 @@ $(document).ready( function() {
 
     $("#add").click(function() {
         temp = $("#display").html();
-        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ",") {
+        if(firstPoint === true && count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ".") {
             temp = "+";
             $("#display").html(temp);
             count = 1;
@@ -161,7 +161,7 @@ $(document).ready( function() {
 
     $("#substract").click(function() {
         temp = $("#display").html();
-        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ",") {
+        if(firstPoint === true && count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ".") {
             temp = "-";
             $("#display").html(temp);
             count = 1;
@@ -173,7 +173,7 @@ $(document).ready( function() {
 
     $("#multiply").click(function() {
         temp = $("#display").html();
-        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ",") {
+        if(firstPoint === true && count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ".") {
             temp = "*";
             $("#display").html(temp);
             count = 1;
@@ -185,7 +185,7 @@ $(document).ready( function() {
 
     $("#divide").click(function() {
         temp = $("#display").html();
-        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ",") {
+        if(firstPoint === true && count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ".") {
             temp = "/";
             $("#display").html(temp);
             count = 1;
@@ -195,15 +195,19 @@ $(document).ready( function() {
         }
     });
 
-    $("#comma").click(function() {
+    var firstPoint = true;
+    $("#point").click(function() {
+        if(firstPoint) {
+            firstPoint = false;
+        }
         temp = $("#display").html();
-        temp += ",";
+        temp += ".";
         $("#display").html(temp);
     });
 
     $("#sign").click(function() {
         temp = $("#display").html();
-        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ",") {
+        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ".") {
             temp = "-";
             $("#display").html(temp);
             count = 1;
@@ -213,25 +217,21 @@ $(document).ready( function() {
         }
     });
 
-    var startingBracket = 0;
-    var endingBracket = 0;
     $("#starting-bracket").click(function() {
         temp = $("#display").html();
-        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ",") {
+        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ".") {
             temp = "(";
             $("#display").html(temp);
             count = 1;
-            startingBracket++;
         } else {
             temp += "(";
             $("#display").html(temp);
-            startingBracket++;
         }
     });
 
     $("#ending-bracket").click(function() {
         temp = $("#display").html();
-        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ",") {
+        if(count === 0 && temp.charAt(0) === "0" && temp.charAt(1) !== ".") {
             temp = ")";
             $("#display").html(temp);
             count = 1;

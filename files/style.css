@@ -87,7 +87,7 @@ table tr, table td {
   border-radius: 5px;
   text-align: left;
   font-family: 'Consolas', Courier New, Courier, monospace;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: orangered;
   background-color: lightcyan;  
 }
@@ -96,6 +96,7 @@ table tr, table td {
   display: block;
   max-width: 31.25rem;
   margin: auto;
+  padding: 0 1rem;
   text-align: center;
   font-size: .8rem;
   font-family: Arial, Helvetica, sans-serif;
@@ -150,13 +151,13 @@ table tr, table td {
 
 #starting-bracket, #ending-bracket,
 #multiply, #divide, #add, #substract,
-#comma, #sign {
+#point, #sign {
   background: PapayaWhip;
 }
 
 #starting-bracket:active, #ending-bracket:active,
 #multiply:active, #divide:active, #add:active,
-#substract:active, #comma:active, #sign:active {
+#substract:active, #point:active, #sign:active {
   background: lightgoldenrodyellow;
   vertical-align: top;
   padding: 0px 1px 1px 1px;
