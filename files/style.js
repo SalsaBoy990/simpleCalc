@@ -235,11 +235,9 @@ $(document).ready( function() {
             temp = ")";
             $("#display").html(temp);
             count = 1;
-            endingBracket++;
         } else {
             temp += ")";
             $("#display").html(temp);
-            endingBracket++;
         }
     });
 });

@@ -14,7 +14,7 @@ function simpleCalc(data, msg) {
     var multiplySignInjecter = function(i) {
         var isNumber = input[i - 1]; 
         isNumber = isNumber.match(/[0-9]/g);
-        return (isNumber !== null) ? ("*" + c) : c;
+        return (isNumber !== null) ? ("*" + input[i]) : input[i];
     };
 
     /* Formatting the input string. For example: '5(76+65)+7' becomes '5*(76+65)+7'. */
