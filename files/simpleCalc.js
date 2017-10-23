@@ -2,7 +2,7 @@ function simpleCalc(sb, eb, data, msg) {
     "use strict";
     /* simpleCalc: Simple Calculator Program
      * (c) Copyright: András Gulácsi 2017
-     * Licence: MIT
+     * License: MIT
      * 
      * ARGUMENTS:
      * 'sb' = starting bracket,
@@ -43,7 +43,6 @@ function simpleCalc(sb, eb, data, msg) {
                     break;
             }
         }
-        /* console.log(result);*/
         return result;
     })();
 
