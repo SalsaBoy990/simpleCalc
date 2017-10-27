@@ -36,7 +36,7 @@ function simpleCalc(data, msg) {
    /* eval() is useful in this case. It invokes the JS engine on our string.
     * It 'knows' the math. With simple error handling. */
    try {
-       if (keywordRemover(input) === false) {
+       if (keywordChecker(input) === false) {
            output += eval(input);
        }
        else {
@@ -55,11 +55,11 @@ function simpleCalc(data, msg) {
    result.innerHTML += output;
 }
 
-/* It removes the JS keywords from the input string to make eval immune against malicious code.
+/* It searches for JS keywords in the input string to make eval immune against malicious code.
  * User input is not even possible from keyboard, only the buttons can be used.
  * Basically, I restrict the JS interpreter to evaluate very basic math expressions only!
  * You can expand the list of keywords since it is not complete. */
-function keywordRemover(str) {
+function keywordChecker(str) {
     var arr = [
         "var", "const", "let", "if", "else", "switch", "=>", "function",
         "for", "forEach", "while", "do", "new", "delete", "return",
