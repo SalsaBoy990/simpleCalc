@@ -36,7 +36,13 @@ function simpleCalc(data, msg) {
    /* eval() is useful in this case. It invokes the JS engine on our string.
     * It 'knows' the math. With simple error handling. */
    try {
-       output += eval(input);
+       if (keywordRemover(input) === false) {
+           output += eval(input);
+       }
+       else {
+           alert("Possibly malicious code in user input. Not executing it!");
+           throw new Error("Possibly malicious code in user input. Not executing it!");
+       }
    }
    catch(e) {
         var error = document.getElementById(msg);
@@ -47,4 +53,22 @@ function simpleCalc(data, msg) {
    /* Append results to the display of the calculator. */
    var result = document.getElementById(data);
    result.innerHTML += output;
+}
+
+/* It removes the JS keywords from the input string to make eval immune against malicious code.
+ * User input is not even possible from keyboard, only the buttons can be used.
+ * Basically, I restrict the JS interpreter to evaluate very basic math expressions only!
+ * You can expand the list of keywords since it is not complete. */
+function keywordRemover(str) {
+    var arr = [
+        "var", "const", "let", "if", "else", "switch", "=>", "function",
+        "for", "forEach", "while", "do", "new", "delete", "return",
+        "prototype", "__proto__", "this", "window", "process", "alert", "console",
+        "setTimeout", "setInterval", "instanceof", "class", "constructor", "throw",
+        "eval", "with", "Object", "Function", "Array", "String", "Number", "Boolean",
+        "RegExp", "Error", "typeof"
+    ];
+    var pattern = new RegExp(arr.join("|"), "i");
+    
+    return pattern.test(str);
 }
